@@ -11,6 +11,11 @@
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
 
+- name: Update Nginx Config
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 - name: Include App Prerequisites 
   ansible.builtin.import_role:
     name: common
@@ -26,3 +31,5 @@
   ansible.builtin.import_role:
     name: elk
     tasks_from: filebeat
+
+    
