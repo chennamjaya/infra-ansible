@@ -33,6 +33,11 @@
   args:
     chdir: /app
 
+- name: Install Node Exporter
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: node-exporter
+    
 - name: Install MySQL Client
   ansible.builtin.dnf:
     name: mysql
@@ -48,9 +53,6 @@
     enabled: yes
     daemon-reload: yes
 
-- name: Install Node Exporter
-  ansible.builtin.import_role:
-    name: prometheus
-    tasks_from: node-exporter
+
 
         
