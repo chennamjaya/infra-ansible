@@ -18,3 +18,12 @@
     name: prometheus
     state: restarted
 
+- name: Copy Alert manager config
+  ansible.builtin.template:
+    src: alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
+
+- name: Restart Alertmanager
+  ansible.builtin.systemd:
+    name: alertmanager
+    state: restarted
