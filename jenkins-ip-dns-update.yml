@@ -1,0 +1,12 @@
+- name: Update Jenkins IP in Route53
+  hosts: localhost
+  tasks:
+    - name: Update Jenkins Ip
+      amazon.aws.route53:
+        state: present
+        zone: vaishnavidevops.online
+        record: jenkins.vaishnavidevops.online
+        type: A
+        ttl: 10
+        value: 3.95.254.175
+        wait: true
