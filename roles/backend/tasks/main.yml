@@ -28,10 +28,10 @@
     name: common
     tasks_from: app_prerequisites
      
-- name: Install NodeJs Dependencies
-  ansible.builtin.shell: npm install
-  args:
-    chdir: /app
+#- name: Install NodeJs Dependencies
+# ansible.builtin.shell: npm install
+#args:
+#chdir: /app
 
 - name: Install Node Exporter
   ansible.builtin.import_role:
